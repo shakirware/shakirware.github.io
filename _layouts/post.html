@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{%- include back_link.html -%}
+
+<article>
+  <p class="post-meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.theme_config.date_format }}</time>
+  </p>
+
+  <h1>{{ page.title }}</h1>
+
+  {%- if page.related_projects %}
+  <p><em>Related:
+  {%- for id in page.related_projects -%}
+    {%- assign p = site.data.projects | where: "id", id | first -%}
+    {%- if p %} <a href="{% if p.page %}{{ p.page | relative_url }}{% else %}{{ '/projects/' | relative_url }}#{{ p.id }}{% endif %}">{{ p.name }}</a>{% unless forloop.last %},{% endunless %}{% endif -%}
+  {%- endfor -%}
+  </em></p>
+  {%- endif %}
+
+  {{ content }}
+</article>

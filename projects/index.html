@@ -1,0 +1,37 @@
+---
+layout: page
+title: Projects
+---
+
+<p>
+  Things I've built, from production applications
+  to small experiments and university projects.
+</p>
+
+<ul>
+{% for p in site.data.projects %}
+  {% assign primary = p.links | first %}
+  <li id="{{ p.id }}">
+    <strong>
+      {% if p.page %}
+        <a href="{{ p.page | relative_url }}">{{ p.name }}</a>
+      {% elsif primary and primary.url %}
+        <a href="{{ primary.url }}">{{ p.name }}</a>
+      {% else %}
+        {{ p.name }}
+      {% endif %}
+    </strong>
+
+    {% if p.period or p.status_label %}
+      <br>
+      <small>
+        {% if p.period %}{{ p.period }}{% endif %}
+        {% if p.period and p.status_label %} · {% endif %}
+        {{ p.status_label | downcase }}
+      </small>
+    {% endif %}
+
+    <p>{{ p.summary }}</p>
+  </li>
+{% endfor %}
+</ul>
