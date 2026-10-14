@@ -1,0 +1,18 @@
+title: shakr.dev
+author: Shakir
+description: Personal website and portfolio.
+
+url: "https://shakr.dev"
+baseurl: ""
+
+remote_theme: riggraz/no-style-please
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-feed
+
+theme_config:
+  appearance: dark 
+  show_description: false
+  lowercase_titles: true
