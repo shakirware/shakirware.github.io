@@ -1,7 +1,18 @@
 ---
-layout: page
+layout: default
 title: Writing
 ---
-<p>Long-form notes. </p>
+{%- include back_link.html -%}
 
-{% include post_list.html %}
+<section class="intro">
+  <h1>Writing</h1>
+</section>
+
+<ul class="entries posts">
+  {%- for post in site.posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <p class="meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>{% if post.in_progress %} · in progress{% endif %}</p>
+  </li>
+  {%- endfor %}
+</ul>

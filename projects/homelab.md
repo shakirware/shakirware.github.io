@@ -1,8 +1,11 @@
 ---
-layout: case-study
-title: "Homelab: case study"
+layout: write-up
+title: "Building and operating a declarative homelab"
 project: homelab
 permalink: /projects/homelab/
 ---
 
-Coming soon.
+A full write-up is in progress.
+
+[source](https://github.com/shakirware/homelab-nix)
+{: .meta}

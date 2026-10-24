@@ -19,5 +19,9 @@ layout: default
   </em></p>
   {%- endif %}
 
+  {%- if page.in_progress %}
+  <p class="note">This article is being rewritten and will be back soon.</p>
+  {%- endif %}
+
   {{ content }}
 </article>

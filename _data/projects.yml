@@ -1,115 +1,113 @@
 - id: pharmacyshifts
+  group: featured
   name: PharmacyShifts
   status_label: Live in production
   period: Feb 2026 – present
   page: /projects/pharmacyshifts/
   summary: >-
-    A shift discovery platform for UK locum pharmacists. It ingests about 3,900 new or
-    updated listings a day from 3 agencies and resolves them into 30,000+
-    deduplicated live shifts, with radius search and alerts.
-  stack: [Python, FastAPI, PostgreSQL/PostGIS, Redis, Next.js, TypeScript, Docker, Prometheus, GitHub Actions]
+    Helps UK locum pharmacists find and compare shifts from three agencies. It collects listings on a schedule, matches the same shift across agencies, and adds radius search and alerts.
   links:
     - label: pharmacyshifts.app
       url: https://pharmacyshifts.app/
-  repo_note: Private repository
 
 - id: homelab
-  name: Homelab platform
+  group: featured
+  name: Homelab
   status_label: Live, in daily use
   period: Jan 2026 – present
   page: /projects/homelab/
   summary: >-
-    A declarative private cloud: OpenTofu provisions 6 NixOS VMs on Proxmox and Colmena
-    deploys them.
-  stack: [Nix, NixOS, Colmena, OpenTofu, Proxmox, sops-nix, Prometheus, Grafana, Loki, Caddy]
+    My self-hosted infrastructure on a single Proxmox server. OpenTofu provisions the NixOS VMs and Colmena deploys their configuration, so the whole setup is defined in code.
   links:
     - label: GitHub
       url: https://github.com/shakirware/homelab-nix
 
 - id: coachlog
+  group: smaller
   name: CoachLog
   status_label: Unfinished prototype
   period: 2025 – Jan 2026
   summary: >-
-    A strength-coaching web app where coaches build periodised plans and athletes log
-    sessions.
+    A strength-coaching web app. Coaches build periodised training plans, and athletes log their sessions against them.
 
 - id: rentmap
+  group: smaller
   name: RentMap
   status_label: Personal tool
   period: May 2026
   summary: >-
-    Ranks rental listings by deal and quality, enriching each one from six UK open-data
-    sources and explaining every score.
+    Ranks rental listings by value and quality. Each listing is enriched from six UK open-data sources, and every score comes with an explanation.
 
 - id: training-template
+  group: smaller
   name: Training programme generator
   status_label: Personal tool, in use
   period: Mar 2025 – Jun 2026
   summary: >-
-    A CLI that turns YAML strength-training programmes into styled Excel workbooks with
-    calculated loads, charts and formula-driven daily views.
+    Turns strength-training programmes written in YAML into Excel workbooks, with calculated loads, charts and formula-driven daily views.
   links:
     - label: GitHub
       url: https://github.com/shakirware/colorful-training-template
 
 - id: autotrader-analyser
+  group: older
   name: Car listing analyser
   status_label: Experiment
   period: Jun 2024
   summary: >-
-    A car-buying helper that reads listings, finds the number plate in the
-    photos, looks up MOT history and ranks the cars with a weighted score.
+    Helps compare used cars for sale. It reads listings, finds the number plate in the photos, looks up MOT history and ranks the cars with a weighted score.
   links:
     - label: GitHub
       url: https://github.com/shakirware/autotrader-uk-scraper-analyzer
 
 - id: secure-chat
+  group: older
   name: Secure Chat
   status_label: MSc dissertation
   period: May – Sep 2023
   summary: >-
-    An end-to-end encrypted chat prototype inspired by Telegram, using TLS, X25519/HKDF key agreement and per-message key ratcheting to support direct, group and offline messaging.
+    An end-to-end encrypted chat prototype inspired by Telegram. It uses TLS, X25519/HKDF key agreement and per-message key ratcheting for direct, group and offline messages.
   links:
     - label: GitHub
       url: https://github.com/shakirware/secure-chat-app
 
 - id: chess-engine
+  group: older
   name: Chess Engine
   status_label: BSc dissertation
   period: Jan – May 2022
   summary: >-
-    A Java chess engine with a JavaFX board: 0x88 move generation, a 4-ply alpha-beta
-    search and a Polyglot opening-book reader.
+    A Java chess engine with a JavaFX board. It uses 0x88 move generation, a 4-ply alpha-beta search and a Polyglot opening-book reader.
   links:
     - label: GitHub
       url: https://github.com/shakirware/chess-engine
 
 - id: dotfiles
+  group: smaller
   name: Dotfiles and workstation
   status_label: Maintained
   period: Mar 2025 – present
   summary: >-
-    My Arch Linux and SwayFX workstation as 16 GNU Stow packages, with one wallpaper-derived
-    colour palette pushed to 8 tools.
+    My Arch Linux and SwayFX workstation, kept as 16 GNU Stow packages. One colour palette, derived from the wallpaper, is applied across 8 tools.
   links:
     - label: GitHub
       url: https://github.com/shakirware/dotfiles
 
 - id: cv-workflow
+  group: smaller
   name: CV evidence workflow
   status_label: Personal tool
   period: Dec 2025 – present
   summary: >-
-   A LaTeX-based CV management system that tracks experience and achievements alongside supporting evidence.
+    Keeps my CV and the evidence behind it together, tracking experience and achievements in LaTeX alongside supporting evidence.
 
 - id: c-memory-dumper
+  group: older
   name: C memory dumper
   status_label: Early experiment
   period: Aug 2018
   summary: >-
-    Reads a process's <code>/proc/&lt;pid&gt;/maps</code> and dumps each mapped region from
-    <code>/proc/&lt;pid&gt;/mem</code>. A first look at how Linux exposes process memory.
+    An early look at how Linux exposes process memory. It reads a process's <code>/proc/&lt;pid&gt;/maps</code> and dumps each mapped region from <code>/proc/&lt;pid&gt;/mem</code>.
   links:
     - label: GitHub
       url: https://github.com/shakirware/C-memory-dumper

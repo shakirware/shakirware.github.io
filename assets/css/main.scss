@@ -1,0 +1,266 @@
+---
+---
+@import "no-style-please";
+
+// The theme draws dark mode by inverting a black-on-white page, so colours
+// here are written for a light background: #666 renders as #999, and so on.
+$muted: #666;
+$faint: #b3b3b3;
+
+body {
+  font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.w {
+  max-width: 620px;
+  padding: 3rem 1rem 5rem;
+
+  @media (min-width: 640px) {
+    padding-top: 5rem;
+  }
+}
+
+h1, h2, h3 {
+  line-height: 1.3;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: $faint;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+// Shared header, used on every page.
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 4rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  nav a {
+    color: $muted;
+  }
+}
+
+.site-name {
+  font-weight: bold;
+}
+
+// Homepage.
+.intro {
+  h1 {
+    font-size: 1.4rem;
+    margin: 0 0 1.25rem;
+  }
+}
+
+section + section {
+  margin-top: 4.5rem;
+}
+
+section h2 {
+  font-size: 1em;
+  font-weight: normal;
+  color: $muted;
+  margin: 0 0 1.5rem;
+}
+
+.entries,
+.elsewhere {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entries li {
+  margin: 0;
+
+  & + li {
+    margin-top: 2.25rem;
+  }
+
+  h3 {
+    font-size: 1em;
+    margin: 0 0 0.35rem;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .links {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+
+    a {
+      color: $muted;
+    }
+  }
+}
+
+// Projects page: selected work gets more room, the rest is compact and the
+// archive is quieter still.
+.entries {
+  .meta {
+    color: $muted;
+    margin-bottom: 0.5rem;
+  }
+
+  &.selected li + li {
+    margin-top: 3rem;
+  }
+
+  &.compact li + li {
+    margin-top: 1.75rem;
+  }
+
+  // Name and date share a line.
+  &.compact h3,
+  &.compact .meta {
+    display: inline;
+  }
+
+  &.compact .meta {
+    margin-left: 1ch;
+
+    & + p {
+      margin-top: 0.35rem;
+    }
+
+    // Too narrow to share a line without breaking the date.
+    @media (max-width: 480px) {
+      display: block;
+      margin-left: 0;
+    }
+  }
+
+  &.archive h3 {
+    font-weight: normal;
+  }
+
+  &.archive p {
+    color: $muted;
+  }
+
+  // Writing page.
+  &.posts {
+    margin-top: 3rem;
+  }
+
+  &.posts li + li {
+    margin-top: 1.75rem;
+  }
+
+  &.posts .meta {
+    font-size: 0.9em;
+    margin: 0.25rem 0 0;
+  }
+
+  &.archive code {
+    color: inherit;
+    background: none;
+  }
+}
+
+.more {
+  margin-top: 2.25rem;
+
+  a {
+    color: $muted;
+  }
+}
+
+.elsewhere li {
+  margin: 0.35rem 0;
+
+  span {
+    display: inline-block;
+    width: 8ch;
+    color: $muted;
+  }
+}
+
+// Project write-ups.
+.write-up {
+  h1 {
+    font-size: 1.4rem;
+    margin: 0 0 1.25rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    margin: 3.5rem 0 1rem;
+  }
+
+  h3 {
+    font-size: 1em;
+    margin: 2.25rem 0 0.75rem;
+  }
+
+  .meta a {
+    color: $muted;
+  }
+
+  figure {
+    margin: 2.5rem 0;
+  }
+
+  figcaption {
+    color: $muted;
+  }
+
+  // Screenshots link to the full-size file.
+  figure a {
+    display: block;
+    cursor: zoom-in;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// "In progress" note on unfinished articles.
+.note {
+  color: $muted;
+}
+
+// Browsers indent figures by 40px, which wastes a third of a phone screen.
+figure {
+  margin: 2rem 0;
+}
+
+figcaption {
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+}

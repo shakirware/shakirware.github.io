@@ -1,6 +1,34 @@
 ---
-layout: home
+layout: default
 ---
+{%- include back_link.html -%}
 
-<h2>writing</h2>
-{%- include post_list.html -%}
+<section class="intro">
+  <h1>Hey, I'm Shakir.</h1>
+  <p>I'm a software engineer based in London. I spend a lot of my time building software, experimenting with infrastructure and learning new things.</p>
+</section>
+
+<section>
+  <h2>Things I've built</h2>
+  <ul class="entries">
+    <li>
+      <h3><a href="{{ '/projects/pharmacyshifts/' | relative_url }}">PharmacyShifts</a></h3>
+      <p>Locum pharmacy shifts are spread across different agency websites. I built PharmacyShifts to bring them into one place and make finding work easier.</p>
+      <p class="links"><a href="{{ '/projects/pharmacyshifts/' | relative_url }}">write-up</a> <a href="https://pharmacyshifts.app/">pharmacyshifts.app</a></p>
+    </li>
+    <li>
+      <h3><a href="{{ '/projects/homelab/' | relative_url }}">Homelab</a></h3>
+      <p>Running services at home can get messy pretty quickly. I've been building a setup that makes it easier to manage everything without configuring each machine by hand.</p>
+      <p class="links"><a href="{{ '/projects/homelab/' | relative_url }}">write-up</a> <a href="https://github.com/shakirware/homelab-nix">source</a></p>
+    </li>
+  </ul>
+  <p class="more"><a href="{{ '/projects/' | relative_url }}">other projects</a></p>
+</section>
+
+<section>
+  <h2>Elsewhere</h2>
+  <ul class="elsewhere">
+    <li><span>github</span> <a href="https://github.com/shakirware">shakirware</a></li>
+    <li><span>email</span> <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+  </ul>
+</section>

@@ -1,4 +1,5 @@
 title: shakr.dev
+description: "Software engineer interested in backend systems, infrastructure and building useful things."
 author:
   name: Shakir
   email: shakir-redhead@outlook.com
@@ -16,6 +17,7 @@ theme_config:
   appearance: dark
   date_format: "%Y-%m-%d"
   lowercase_titles: true
+  show_description: true
 
 plugins:
   - jekyll-remote-theme
@@ -24,6 +26,13 @@ plugins:
   - jekyll-sitemap
 
 permalink: /writing/:title/
+
+# Every article is marked as in progress until its post sets in_progress: false.
+defaults:
+  - scope:
+      type: posts
+    values:
+      in_progress: true
 
 exclude:
   - Gemfile

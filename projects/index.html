@@ -1,37 +1,37 @@
 ---
-layout: page
+layout: default
 title: Projects
 ---
+{%- include back_link.html -%}
 
-<p>
-  Things I've built, from production applications
-  to small experiments and university projects.
-</p>
+<section class="intro">
+  <h1>Projects</h1>
+  <p>Things I've built, from production applications to small experiments and university projects.</p>
+</section>
 
-<ul>
-{% for p in site.data.projects %}
-  {% assign primary = p.links | first %}
-  <li id="{{ p.id }}">
-    <strong>
-      {% if p.page %}
-        <a href="{{ p.page | relative_url }}">{{ p.name }}</a>
-      {% elsif primary and primary.url %}
-        <a href="{{ primary.url }}">{{ p.name }}</a>
-      {% else %}
-        {{ p.name }}
-      {% endif %}
-    </strong>
+{%- assign sections = "featured|Selected work|selected,smaller|Other projects|compact,older|Older experiments and university projects|compact archive" | split: "," %}
+{%- for section in sections %}
+{%- assign parts = section | split: "|" %}
+{%- assign projects = site.data.projects | where: "group", parts[0] %}
+{%- if projects.size > 0 %}
 
-    {% if p.period or p.status_label %}
-      <br>
-      <small>
-        {% if p.period %}{{ p.period }}{% endif %}
-        {% if p.period and p.status_label %} · {% endif %}
-        {{ p.status_label | downcase }}
-      </small>
-    {% endif %}
-
-    <p>{{ p.summary }}</p>
-  </li>
-{% endfor %}
-</ul>
+<section>
+  <h2>{{ parts[1] }}</h2>
+  <ul class="entries {{ parts[2] }}">
+    {%- for p in projects %}
+    <li id="{{ p.id }}">
+      <h3>{% if p.page %}<a href="{{ p.page | relative_url }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
+      <p class="meta">{{ p.period }}{% if p.period and p.status_label %} · {% endif %}{{ p.status_label | downcase }}</p>
+      <p>{{ p.summary }}</p>
+      {%- if p.page or p.links %}
+      <p class="links">
+        {%- if p.page %}<a href="{{ p.page | relative_url }}">write-up</a> {% endif %}
+        {%- for l in p.links %}<a href="{{ l.url }}">{% if l.label == "GitHub" %}source{% else %}{{ l.label }}{% endif %}</a> {% endfor -%}
+      </p>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+{%- endfor %}
