@@ -7,6 +7,12 @@
 $muted: #666;
 $faint: #b3b3b3;
 
+// The inversion only covers body, so the area shown when over-scrolling on
+// phones stays white unless html is set dark directly.
+html {
+  background: #000;
+}
+
 body {
   font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
   font-size: 15px;
